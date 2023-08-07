@@ -9,7 +9,7 @@ import useFetch from '../../../hook/useFetch'
 
 
 const Popularjobs = () => {
-  const router = useRouter;
+  const router = useRouter();
 
   const {data, isLoading, error} = useFetch
   ('search', {
@@ -43,6 +43,7 @@ const Popularjobs = () => {
               <PopularJobCard 
                 item = {item}
                 selectedJob={selectedJob}
+                handleCardPress={handleCardPress}
               />
             )}
             keyExtractor={item => item?.job_id}
@@ -56,4 +57,4 @@ const Popularjobs = () => {
   )
 }
 
-export default Popularjobs
+export default Popularjobs;
